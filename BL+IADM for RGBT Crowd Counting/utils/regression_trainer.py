@@ -99,8 +99,8 @@ class RegTrainer(Trainer):
             logging.info('-'*5 + 'Epoch {}/{}'.format(epoch, args.max_epoch - 1) + '-'*5)
             self.epoch = epoch
             self.train_eopch()
-            # if epoch % args.val_epoch == 0 and epoch >= args.val_start:
-            #     game0_is_best, game3_is_best = self.val_epoch()
+            if epoch % args.val_epoch == 0 and epoch >= args.val_start:
+                game0_is_best, game3_is_best = self.val_epoch()
 
             # if epoch >= args.val_start and (game0_is_best or game3_is_best):
             #     self.test_epoch()
